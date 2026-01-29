@@ -1,0 +1,466 @@
+/**
+ * FlexiDesk Settings Styles
+ * Matches design from assets/screen.png
+ */
+
+.flexidesk-container {
+  min-height: 100vh;
+  background-color: #F9FAFB;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.flexidesk-header {
+  background-color: white;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexidesk-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.header-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #F3F4F6;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6B7280;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background-color: #E5E7EB;
+  color: #374151;
+}
+
+/* Main Layout */
+.flexidesk-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.flexidesk-sidebar {
+  width: 280px;
+  background-color: white;
+  border-right: 1px solid #E5E7EB;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #F9FAFB;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.25rem 0;
+}
+
+.user-plan {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.nav-item svg {
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background-color: #F3F4F6;
+}
+
+.nav-item.active {
+  background-color: #2563EB;
+  color: white;
+}
+
+/* Content Area */
+.flexidesk-content {
+  flex: 1;
+  padding: 2.5rem 3rem;
+  overflow-y: auto;
+  max-width: 1200px;
+}
+
+.content-header {
+  margin-bottom: 2.5rem;
+}
+
+.content-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.content-subtitle {
+  font-size: 1.125rem;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* Preferences Sections */
+.preferences-section {
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 2rem 0;
+}
+
+.preference-group {
+  margin-bottom: 2.5rem;
+}
+
+.preference-group:last-child {
+  margin-bottom: 0;
+}
+
+.preference-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6B7280;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+/* Theme Cards */
+.theme-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.theme-card {
+  position: relative;
+  padding: 1.5rem;
+  background-color: white;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-card:hover {
+  border-color: #2563EB;
+}
+
+.theme-card.selected {
+  border-color: #2563EB;
+  background-color: #F0F9FF;
+}
+
+.theme-preview {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+.light-preview {
+  background-color: #FFFFFF;
+}
+
+.dark-preview {
+  background-color: #1F2937;
+}
+
+.contrast-preview {
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FBBF24;
+}
+
+.contrast-text {
+  color: #FBBF24;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+}
+
+.theme-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.theme-radio {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #D1D5DB;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.theme-radio.selected {
+  border-color: #2563EB;
+  background-color: #2563EB;
+  box-shadow: inset 0 0 0 3px white;
+}
+
+/* Font Size Control */
+.font-size-control {
+  margin-bottom: 2rem;
+}
+
+.font-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #E5E7EB 0%, #2563EB 33.33%, #2563EB 33.33%, #E5E7EB 33.33%);
+  outline: none;
+  -webkit-appearance: none;
+  margin-bottom: 1rem;
+}
+
+.font-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2563EB;
+  cursor: pointer;
+  border: 4px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.font-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2563EB;
+  cursor: pointer;
+  border: 4px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.font-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+
+.font-labels span {
+  font-size: 0.875rem;
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.font-labels span.active {
+  color: #2563EB;
+  font-weight: 600;
+}
+
+/* Live Preview */
+.live-preview {
+  padding: 1.5rem;
+  border: 2px dashed #D1D5DB;
+  border-radius: 8px;
+  background-color: #F9FAFB;
+}
+
+.preview-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6366F1;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.preview-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #111827;
+  margin: 0;
+}
+
+/* Speed Buttons */
+.speed-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.speed-btn {
+  padding: 0.875rem 1.5rem;
+  background-color: white;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.speed-btn:hover {
+  border-color: #2563EB;
+}
+
+.speed-btn.selected {
+  background-color: #2563EB;
+  border-color: #2563EB;
+  color: white;
+}
+
+.speed-description {
+  font-size: 0.9375rem;
+  color: #6B7280;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-reset,
+.btn-save {
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-reset {
+  background-color: white;
+  border-color: #E5E7EB;
+  color: #374151;
+}
+
+.btn-reset:hover {
+  background-color: #F9FAFB;
+  border-color: #D1D5DB;
+}
+
+.btn-save {
+  background-color: #2563EB;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #1D4ED8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flexidesk-sidebar {
+    width: 240px;
+  }
+
+  .flexidesk-content {
+    padding: 1.5rem;
+  }
+
+  .theme-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .speed-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
