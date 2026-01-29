@@ -1,0 +1,122 @@
+/**
+ * User Profile Styles
+ */
+
+.user-profile {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.avatar-icon {
+  filter: brightness(0) invert(1);
+}
+
+.profile-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.profile-info p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.profile-preferences {
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-preferences h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3rem;
+}
+
+.preference-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.preference-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.preference-item:hover {
+  border-color: var(--accent-color);
+  transform: translateX(4px);
+}
+
+.preference-icon {
+  font-size: 1.5rem;
+}
+
+.preference-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preference-name {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.preference-value {
+  font-weight: 600;
+  color: var(--accent-color);
+  text-transform: capitalize;
+}
+
+.settings-button {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: var(--spacing-md);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-profile {
+    padding: var(--spacing-md);
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .profile-info h2 {
+    font-size: 1.5rem;
+  }
+}
