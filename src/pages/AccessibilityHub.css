@@ -373,7 +373,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--text-tertiary, #D1D5DB);
+  background-color: var(--border-color, #D1D5DB);
   transition: 0.3s;
   border-radius: 34px;
 }
