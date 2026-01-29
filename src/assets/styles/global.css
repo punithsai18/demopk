@@ -21,3 +21,69 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* Theme Styles */
+:root[data-theme="light"] {
+  --bg-primary: #F9FAFB;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F3F4F6;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  --border-color: #E5E7EB;
+  --accent-color: #2563EB;
+  --accent-hover: #1D4ED8;
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #111827;
+  --bg-secondary: #1F2937;
+  --bg-tertiary: #374151;
+  --text-primary: #F9FAFB;
+  --text-secondary: #D1D5DB;
+  --text-tertiary: #9CA3AF;
+  --border-color: #4B5563;
+  --accent-color: #3B82F6;
+  --accent-hover: #60A5FA;
+}
+
+:root[data-theme="high-contrast"] {
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-tertiary: #1A1A1A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --text-tertiary: #E5E5E5;
+  --border-color: #FFFFFF;
+  --accent-color: #00FF00;
+  --accent-hover: #00CC00;
+}
+
+/* Apply theme colors to body */
+:root[data-theme="light"] body {
+  background-color: #F9FAFB;
+  color: #111827;
+}
+
+:root[data-theme="dark"] body {
+  background-color: #111827;
+  color: #F9FAFB;
+}
+
+:root[data-theme="high-contrast"] body {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* Font Size Styles */
+:root[data-font-size="small"] {
+  font-size: 14px;
+}
+
+:root[data-font-size="medium"] {
+  font-size: 16px;
+}
+
+:root[data-font-size="large"] {
+  font-size: 20px;
+}

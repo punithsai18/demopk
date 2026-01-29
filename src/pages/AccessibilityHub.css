@@ -5,17 +5,17 @@
 
 .accessibility-hub {
   min-height: 100vh;
-  background-color: #F3F4F6;
+  background-color: var(--bg-primary, #F3F4F6);
 }
 
 /* Header */
 .hub-header {
-  background-color: white;
+  background-color: var(--bg-secondary, white);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid var(--border-color, #E5E7EB);
 }
 
 .hub-logo {
@@ -27,7 +27,7 @@
 .hub-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary, #111827);
 }
 
 .hub-actions {
@@ -38,7 +38,7 @@
 
 .btn-logout {
   padding: 0.625rem 1.5rem;
-  background-color: #2563EB;
+  background-color: var(--accent-color, #2563EB);
   color: white;
   border: none;
   border-radius: 8px;
@@ -49,7 +49,7 @@
 }
 
 .btn-logout:hover {
-  background-color: #1D4ED8;
+  background-color: var(--accent-hover, #1D4ED8);
 }
 
 .user-avatar-small {
@@ -57,7 +57,7 @@
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #E5E7EB;
+  border: 2px solid var(--border-color, #E5E7EB);
 }
 
 .user-avatar-small img {
@@ -75,7 +75,7 @@
 
 /* Profile Card */
 .profile-card {
-  background-color: white;
+  background-color: var(--bg-secondary, white);
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -110,13 +110,13 @@
 .profile-name {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary, #111827);
   margin: 0 0 0.5rem 0;
 }
 
 .profile-email {
   font-size: 1rem;
-  color: #6B7280;
+  color: var(--text-secondary, #6B7280);
   margin: 0 0 0.5rem 0;
 }
 
@@ -125,7 +125,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9375rem;
-  color: #2563EB;
+  color: var(--accent-color, #2563EB);
   font-weight: 500;
   margin: 0;
 }
@@ -133,7 +133,7 @@
 .btn-edit-profile {
   width: 100%;
   padding: 0.875rem;
-  background-color: #2563EB;
+  background-color: var(--accent-color, #2563EB);
   color: white;
   border: none;
   border-radius: 8px;
@@ -148,20 +148,20 @@
 }
 
 .btn-edit-profile:hover {
-  background-color: #1D4ED8;
+  background-color: var(--accent-hover, #1D4ED8);
 }
 
 /* Section Heading */
 .section-heading {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary, #111827);
   margin: 0 0 1.5rem 0;
 }
 
 /* Info Card */
 .info-card {
-  background-color: white;
+  background-color: var(--bg-secondary, white);
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -178,7 +178,7 @@
 .info-title {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary, #111827);
   margin: 0;
 }
 
@@ -266,7 +266,7 @@
 .info-label {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #6B7280;
+  color: var(--text-secondary, #6B7280);
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
@@ -274,7 +274,7 @@
 .info-value {
   font-size: 1rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--text-primary, #111827);
 }
 
 .default-badge,
@@ -306,7 +306,7 @@
 }
 
 .quick-setting-card {
-  background-color: white;
+  background-color: var(--bg-secondary, white);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -342,13 +342,13 @@
 .quick-setting-title {
   font-size: 1rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary, #111827);
   margin: 0 0 0.25rem 0;
 }
 
 .quick-setting-desc {
   font-size: 0.875rem;
-  color: #6B7280;
+  color: var(--text-secondary, #6B7280);
   margin: 0;
 }
 
@@ -373,7 +373,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #D1D5DB;
+  background-color: var(--text-tertiary, #D1D5DB);
   transition: 0.3s;
   border-radius: 34px;
 }
@@ -385,13 +385,13 @@
   width: 20px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--bg-secondary, white);
   transition: 0.3s;
   border-radius: 50%;
 }
 
 .toggle-switch input:checked + .toggle-slider {
-  background-color: #2563EB;
+  background-color: var(--accent-color, #2563EB);
 }
 
 .toggle-switch input:checked + .toggle-slider:before {
@@ -402,7 +402,7 @@
 .btn-manage {
   width: 100%;
   padding: 1rem;
-  background-color: #2563EB;
+  background-color: var(--accent-color, #2563EB);
   color: white;
   border: none;
   border-radius: 10px;
@@ -414,14 +414,14 @@
 }
 
 .btn-manage:hover {
-  background-color: #1D4ED8;
+  background-color: var(--accent-hover, #1D4ED8);
 }
 
 /* Footer Note */
 .footer-note {
   text-align: center;
   font-size: 0.9375rem;
-  color: #6B7280;
+  color: var(--text-secondary, #6B7280);
   margin: 0;
 }
 
