@@ -9,9 +9,13 @@ import './AccessibilityHub.css';
 
 interface AccessibilityHubProps {
   onNavigateToSettings?: () => void;
+  showHeader?: boolean;
 }
 
-const AccessibilityHub: React.FC<AccessibilityHubProps> = ({ onNavigateToSettings }) => {
+const AccessibilityHub: React.FC<AccessibilityHubProps> = ({ 
+  onNavigateToSettings,
+  showHeader = false 
+}) => {
   const { preferences } = useAccessibility();
   const [highContrastEnabled, setHighContrastEnabled] = React.useState(false);
 
@@ -26,25 +30,33 @@ const AccessibilityHub: React.FC<AccessibilityHubProps> = ({ onNavigateToSetting
     ).join(' ');
   };
 
+  const handleNavigateToAccessibility = () => {
+    if (onNavigateToSettings) {
+      onNavigateToSettings();
+    }
+  };
+
   return (
     <div className="accessibility-hub">
-      {/* Header */}
-      <header className="hub-header">
-        <div className="hub-logo">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <path d="M16 4L4 10L16 16L28 10L16 4Z" fill="#2563EB"/>
-            <path d="M4 16L16 22L28 16" stroke="#2563EB" strokeWidth="2" fill="none"/>
-            <path d="M4 22L16 28L28 22" stroke="#2563EB" strokeWidth="2" fill="none"/>
-          </svg>
-          <span className="hub-title">Accessibility Hub</span>
-        </div>
-        <div className="hub-actions">
-          <button className="btn-logout">Logout</button>
-          <div className="user-avatar-small">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23DBEAFE'/%3E%3Cpath d='M20 12a4 4 0 110 8 4 4 0 010-8zM12 28a8 8 0 0116 0' fill='%232563EB'/%3E%3C/svg%3E" alt="User" />
+      {/* Header - only show if showHeader is true */}
+      {showHeader && (
+        <header className="hub-header">
+          <div className="hub-logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4L4 10L16 16L28 10L16 4Z" fill="#2563EB"/>
+              <path d="M4 16L16 22L28 16" stroke="#2563EB" strokeWidth="2" fill="none"/>
+              <path d="M4 22L16 28L28 22" stroke="#2563EB" strokeWidth="2" fill="none"/>
+            </svg>
+            <span className="hub-title">Accessibility Hub</span>
           </div>
-        </div>
-      </header>
+          <div className="hub-actions">
+            <button className="btn-logout">Logout</button>
+            <div className="user-avatar-small">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23DBEAFE'/%3E%3Cpath d='M20 12a4 4 0 110 8 4 4 0 010-8zM12 28a8 8 0 0116 0' fill='%232563EB'/%3E%3C/svg%3E" alt="User" />
+            </div>
+          </div>
+        </header>
+      )}
 
       {/* Main Content */}
       <main className="hub-content">
@@ -191,7 +203,7 @@ const AccessibilityHub: React.FC<AccessibilityHubProps> = ({ onNavigateToSetting
               <span className="toggle-slider"></span>
             </label>
           </div>
-          <div className="quick-setting-card clickable" onClick={onNavigateToSettings}>
+          <div className="quick-setting-card clickable" onClick={handleNavigateToAccessibility}>
             <div className="quick-setting-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="#2563EB">
                 <path d="M10 4a6 6 0 100 12 6 6 0 000-12zM9 9V5a1 1 0 012 0v4a1 1 0 01-2 0zm1 6a1 1 0 100-2 1 1 0 000 2z"/>
@@ -208,7 +220,7 @@ const AccessibilityHub: React.FC<AccessibilityHubProps> = ({ onNavigateToSetting
         </div>
 
         {/* Manage Button */}
-        <button className="btn-manage" onClick={onNavigateToSettings}>
+        <button className="btn-manage" onClick={handleNavigateToAccessibility}>
           Manage All Accessibility Settings
         </button>
 

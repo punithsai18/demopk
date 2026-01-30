@@ -8,7 +8,19 @@ import { useAccessibility } from '../contexts/AccessibilityContext';
 import type { ThemeMode, FontSize, AudioSpeed } from '../types/accessibility';
 import './FlexiDeskSettings.css';
 
-const FlexiDeskSettings: React.FC = () => {
+type PageType = 'profile' | 'accessibility' | 'security' | 'notifications';
+
+interface FlexiDeskSettingsProps {
+  currentPage?: PageType;
+  onNavigate?: (page: PageType) => void;
+  profileContent?: React.ReactNode;
+}
+
+const FlexiDeskSettings: React.FC<FlexiDeskSettingsProps> = ({ 
+  currentPage = 'accessibility',
+  onNavigate,
+  profileContent
+}) => {
   const {
     preferences,
     updateTheme,
@@ -18,7 +30,12 @@ const FlexiDeskSettings: React.FC = () => {
     resetToDefaults,
   } = useAccessibility();
 
-  const [activeNav, setActiveNav] = React.useState('accessibility');
+  const activeNav = currentPage;
+  const setActiveNav = (page: PageType) => {
+    if (onNavigate) {
+      onNavigate(page);
+    }
+  };
 
   const handleSave = () => {
     saveCurrentPreferences();
@@ -139,14 +156,18 @@ const FlexiDeskSettings: React.FC = () => {
         <main className="flexidesk-content" role="tabpanel" id={`${activeNav}-panel`} aria-labelledby={`${activeNav}-tab`}>
           {activeNav === 'profile' && (
             <>
-              <div className="content-header">
-                <h1 className="content-title">Profile Settings</h1>
-                <p className="content-subtitle">Manage your personal information and account details.</p>
-              </div>
-              <section className="preferences-section">
-                <h2 className="section-title">Profile Information</h2>
-                <p>Profile settings content coming soon...</p>
-              </section>
+              {profileContent || (
+                <>
+                  <div className="content-header">
+                    <h1 className="content-title">Profile Settings</h1>
+                    <p className="content-subtitle">Manage your personal information and account details.</p>
+                  </div>
+                  <section className="preferences-section">
+                    <h2 className="section-title">Profile Information</h2>
+                    <p>Profile settings content coming soon...</p>
+                  </section>
+                </>
+              )}
             </>
           )}
 

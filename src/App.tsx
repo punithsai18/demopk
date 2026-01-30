@@ -1,6 +1,6 @@
 /**
  * Main App Component
- * Navigation between FlexiDesk and Accessibility Hub pages
+ * Navigation between Profile (AccessibilityHub) and Settings pages with sidebar
  */
 
 import React, { useState } from 'react';
@@ -10,26 +10,19 @@ import AccessibilityHub from './pages/AccessibilityHub';
 import './assets/styles/global.css';
 import './App.css';
 
-type Page = 'hub' | 'settings';
+type Page = 'profile' | 'accessibility' | 'security' | 'notifications';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('hub');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'hub':
-        return <AccessibilityHub onNavigateToSettings={() => setCurrentPage('settings')} />;
-      case 'settings':
-        return <FlexiDeskSettings />;
-      default:
-        return null;
-    }
-  };
+  const [currentPage, setCurrentPage] = useState<Page>('profile');
 
   return (
     <AccessibilityProvider>
       <div className="app">
-        {renderPage()}
+        <FlexiDeskSettings 
+          currentPage={currentPage} 
+          onNavigate={setCurrentPage}
+          profileContent={<AccessibilityHub onNavigateToSettings={() => setCurrentPage('accessibility')} />}
+        />
       </div>
     </AccessibilityProvider>
   );
