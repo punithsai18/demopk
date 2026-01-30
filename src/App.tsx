@@ -15,17 +15,13 @@ type Page = 'profile' | 'accessibility' | 'security' | 'notifications';
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('profile');
 
-  const handleNavigateToAccessibility = () => {
-    setCurrentPage('accessibility');
-  };
-
   return (
     <AccessibilityProvider>
       <div className="app">
         <FlexiDeskSettings 
           currentPage={currentPage} 
           onNavigate={setCurrentPage}
-          profileContent={<AccessibilityHub onNavigateToSettings={handleNavigateToAccessibility} />}
+          profileContent={<AccessibilityHub onNavigateToSettings={() => setCurrentPage('accessibility')} />}
         />
       </div>
     </AccessibilityProvider>
