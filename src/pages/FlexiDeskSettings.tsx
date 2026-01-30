@@ -121,13 +121,28 @@ const FlexiDeskSettings: React.FC = () => {
 
         {/* Main Content */}
         <main className="flexidesk-content">
-          <div className="content-header">
-            <h1 className="content-title">Accessibility Settings</h1>
-            <p className="content-subtitle">Customize your visual and audio experience for better usability.</p>
-          </div>
+          {activeNav === 'profile' && (
+            <>
+              <div className="content-header">
+                <h1 className="content-title">Profile Settings</h1>
+                <p className="content-subtitle">Manage your personal information and account details.</p>
+              </div>
+              <section className="preferences-section">
+                <h2 className="section-title">Profile Information</h2>
+                <p>Profile settings content coming soon...</p>
+              </section>
+            </>
+          )}
 
-          {/* Visual Preferences */}
-          <section className="preferences-section">
+          {activeNav === 'accessibility' && (
+            <>
+              <div className="content-header">
+                <h1 className="content-title">Accessibility Settings</h1>
+                <p className="content-subtitle">Customize your visual and audio experience for better usability.</p>
+              </div>
+
+              {/* Visual Preferences */}
+              <section className="preferences-section">
             <h2 className="section-title">Visual Preferences</h2>
 
             {/* Color Theme */}
@@ -262,6 +277,34 @@ const FlexiDeskSettings: React.FC = () => {
               Save Preferences
             </button>
           </div>
+            </>
+          )}
+
+          {activeNav === 'security' && (
+            <>
+              <div className="content-header">
+                <h1 className="content-title">Security Settings</h1>
+                <p className="content-subtitle">Manage your account security and privacy preferences.</p>
+              </div>
+              <section className="preferences-section">
+                <h2 className="section-title">Security Options</h2>
+                <p>Security settings content coming soon...</p>
+              </section>
+            </>
+          )}
+
+          {activeNav === 'notifications' && (
+            <>
+              <div className="content-header">
+                <h1 className="content-title">Notification Settings</h1>
+                <p className="content-subtitle">Configure how you receive updates and alerts.</p>
+              </div>
+              <section className="preferences-section">
+                <h2 className="section-title">Notification Preferences</h2>
+                <p>Notification settings content coming soon...</p>
+              </section>
+            </>
+          )}
         </main>
       </div>
     </div>
